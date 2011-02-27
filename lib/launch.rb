@@ -34,7 +34,7 @@ module Launch
 
   ##
   # Checks in with launch and retrieves the agent's configuration.  The
-  # configuration can be retrieved later through +@launch_checkin+.
+  # configuration can be retrieved later through <tt>@launch_checkin<tt>.
 
   def launch_checkin
     response = launch_message Launch::Key::CHECKIN
@@ -50,7 +50,7 @@ module Launch
   #
   # +name+ comes from the socket's name key in the launchd plist.
   #
-  # Example plist:
+  # Example plist Sockets dictionary:
   #
   #  <key>Sockets</key>
   #  <dict>

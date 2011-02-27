@@ -11,6 +11,8 @@ Hoe.plugin :git
 hoe = Hoe.spec 'launch' do
   developer 'Eric Hodel', 'drbrain@segment7.net'
 
+  rdoc_locations << 'docs.seattlerb.org:/data/www/docs.seattlerb.org/launch/'
+
   extra_dev_deps << ['rake-compiler', '~> 0.7']
   self.spec_extras[:extensions] = %w[ext/launch/extconf.rb]
 
@@ -21,11 +23,15 @@ hoe = Hoe.spec 'launch' do
   ]
 end
 
-gem 'rake-compiler', '~> 0.7'
-require 'rake/extensiontask'
+begin
+  gem 'rake-compiler', '~> 0.7'
+  require 'rake/extensiontask'
 
-Rake::ExtensionTask.new hoe.name, hoe.spec do |ext|
-  ext.lib_dir = File.join 'lib', 'launch'
+  Rake::ExtensionTask.new hoe.name, hoe.spec do |ext|
+    ext.lib_dir = File.join 'lib', 'launch'
+  end
+rescue Gem::LoadError
+  warn 'You need to rake newb'
 end
 
 # vim: syntax=ruby
