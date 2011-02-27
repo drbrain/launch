@@ -12,6 +12,10 @@ hoe = Hoe.spec 'launch' do
 
   extra_dev_deps << ['rake-compiler', '~> 0.7']
   self.spec_extras[:extensions] = %w[ext/launch/extconf.rb]
+
+  self.clean_globs = %[
+    lib/launch/launch.bundle
+  ]
 end
 
 gem 'rake-compiler', '~> 0.7'

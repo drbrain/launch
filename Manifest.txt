@@ -1,8 +1,11 @@
 .autotest
-.gemtest
 History.txt
 Manifest.txt
 README.txt
 Rakefile
+ext/launch/extconf.rb
+ext/launch/launch.c
 lib/launch.rb
+lib/launch/webrick.rb
+sample/echo.rb
 test/test_launch.rb
