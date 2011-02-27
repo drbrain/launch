@@ -1,0 +1,8 @@
+.autotest
+.gemtest
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+lib/launch.rb
+test/test_launch.rb
